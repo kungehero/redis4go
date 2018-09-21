@@ -1,0 +1,45 @@
+redis 事务(非原子化操作)
+
+watch() 监听数据
+multi() 开始一个事务
+exec    执行事务
+discard()取消事务
+
+
+
+ACID 原子性 一致性 隔离性 持久性 au consist inter duration
+redis 常见应用场景(数据存储在内存中)
+
+会话存储
+服务器会话，相比关系型数据库延迟低
+
+分析
+充分利用 hash/sorted set/hyperloglog 排序和统计数据
+
+
+排行榜
+利用有序集合 zrevrange 获取投票数作为权重的数据
+
+队列
+利用list类型  resque （RpopLpush模式）
+
+最新的N个记录 
+ltrim 获取最新数据                                                                                                            
+
+缓存 
+与关系型数据库结合，先查询redis '''
+
+
+redis 数据持久化 （存入磁盘，重启自动回复）
+
+RDB (时间段快照) save 900 10 900秒内有10个键值发生变化，rdb存储
+
+
+AOF  (日志)   appendonly yes   
+
+
+
+
+
+
+
