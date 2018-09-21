@@ -7,10 +7,6 @@ import (
 	"github.com/gomodule/redigo/redis"
 )
 
-func test() {
-
-}
-
 var (
 	errConn = errors.New("invalid Connect")
 )
