@@ -11,12 +11,12 @@ package redis4go
 
 //左端插入
 func (this *Receiver) LPush(key string, args ...interface{}) *Result {
-	return this.Do("LPUSH", key, args)
+	return this.Do("LPUSH", key, args...)
 }
 
 //右端插入
 func (this *Receiver) RPush(key string, args ...interface{}) *Result {
-	return this.Do("LPUSH", key, args)
+	return this.Do("LPUSH", key, args...)
 }
 
 //根据索引获取list

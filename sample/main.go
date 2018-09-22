@@ -8,9 +8,9 @@ import (
 func main() {
 	p := redis4go.New("127.0.0.1:6379", "", 0, 100, 100)
 	r := p.GetRedis()
-	v := r.Get("922name")
-	str := v.MustString()
-	fmt.Println(str)
+	v := r.MGet("name1", "name2")
+	//str := v.MustMap()
+	fmt.Println(v)
 	/*switch v.(type) {
 	case string:
 		fmt.Println(v)

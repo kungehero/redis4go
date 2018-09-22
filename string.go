@@ -6,7 +6,7 @@ func Test() {
 
 //返回ok
 func (this *Receiver) Set(params ...interface{}) *Result {
-	return this.Do("SET", params)
+	return this.Do("SET", params...)
 }
 
 //返回key值  字符串
@@ -35,16 +35,16 @@ func (this *Receiver) SetNx(key, value string) *Result {
 }
 
 //批量添加键值对
-func (this *Receiver) MSet(args interface{}) *Result {
-	return this.Do("MSET", args)
+func (this *Receiver) MSet(args ...interface{}) *Result {
+	return this.Do("MSET", args...)
 }
 
 //批量获取键值
-func (this *Receiver) MGet(key ...string) *Result {
+func (this *Receiver) MGet(keys ...string) *Result {
 
-	var keys []interface{}
-	for _, k := range key {
-		keys = append(keys, k)
+	var ks []interface{}
+	for _, k := range keys {
+		ks = append(ks, k)
 	}
-	return this.Do("MSET", keys)
+	return this.Do("MGET", ks...)
 }

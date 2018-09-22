@@ -78,5 +78,5 @@ keys * 获取所有的键  scan 增量获取键值
 del/unlink 删除键
 exists 判断键是否存在
 
- type  获取键的数据类型（如：hash,string……）
+type  获取键的数据类型（如：hash,string……）
 
