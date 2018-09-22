@@ -11,12 +11,12 @@ package redis4go
 
 //左端插入
 func (this *Receiver) LPush(key string, args ...interface{}) *Result {
-	return this.Do("LPUSH", key, args...)
+	return this.Do("LPUSH", key, args)
 }
 
 //右端插入
 func (this *Receiver) RPush(key string, args ...interface{}) *Result {
-	return this.Do("LPUSH", key, args...)
+	return this.Do("LPUSH", key, args)
 }
 
 //根据索引获取list
@@ -25,8 +25,8 @@ func (this *Receiver) Lrange(key string, startindex, endindex int) *Result {
 }
 
 //pivot (before/after) 在索引的中心点添加
-func (this *Receiver) LInsert(key, pivot string, index int, value interface{}) *Result {
-	return this.Do("LINSTER", key, pivot, index, value)
+func (this *Receiver) LInsert(key, pivot, index string, value interface{}) *Result {
+	return this.Do("LINSERT", key, pivot, index, value)
 
 }
 
