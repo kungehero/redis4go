@@ -45,8 +45,10 @@ func New(addr, password string, dbIndex, maxActive, maxIdle int) (p *Pool) {
 }
 
 func (this *Receiver) Do(CommdName string, args ...interface{}) *Result {
+
 	if this.c != nil {
-		return result(this.c.Do(CommdName, args))
+		r, err := this.c.Do(CommdName, args...)
+		return result(r, err)
 	}
 	return result(nil, errConn)
 }
